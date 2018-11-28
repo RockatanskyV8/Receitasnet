@@ -3,6 +3,7 @@
   <% @recipes.each do |recipe| %>
     <li><%= recipe.name %>
     <%= recipe.stuff %>
-    <%= recipe.calories %></li>
+    <%= recipe.calories %>
+    <%= number_to_currency(recipe.cost) %></li>
   <% end %>
 </ul>
