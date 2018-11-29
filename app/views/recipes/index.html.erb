@@ -1,9 +1,18 @@
 <h1><%= pluralize(@recipes.size, "Receita", "Receitas")%></h1>
 <ul>
   <% @recipes.each do |recipe| %>
-    <li><%= recipe.name %>
-    <%= truncate(recipe.stuff, length:15, separador:' ') %>
-    <%= formata_caloria(recipe) %>
-    <%= number_to_currency(recipe.cost) %></li>
-  <% end %>
+  <article>
+      <h2><%= recipe.name %></h2>
+      <p><%= formata_caloria(recipe) %></p>
+      <table>
+        <tr>
+          <th>Modo de Preparo:</th>
+          <td><%= truncate(recipe.stuff, length:15, separador:' ') %></td>
+          </tr>
+          <th>Custo do Prato</th>
+          <td><%= number_to_currency(recipe.cost) %></td>
+        </tr>
+      </table>
+    <% end %>
+  </article>
 </ul>
