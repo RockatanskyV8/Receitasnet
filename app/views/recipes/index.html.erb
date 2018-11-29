@@ -2,7 +2,7 @@
 <ul>
   <% @recipes.each do |recipe| %>
   <article>
-      <h2><%= recipe.name %></h2>
+      <h2><%= link_to recipe.name , recipe %></h2>
       <p><%= formata_caloria(recipe) %></p>
       <table>
         <tr>
