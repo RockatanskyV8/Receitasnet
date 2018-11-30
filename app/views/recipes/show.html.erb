@@ -9,5 +9,7 @@
   <h3>Custo</h3>
   <p><%= @recipe.cost %></p>
 </article>
+
 <%= link_to "Editar Receita" , edit_recipe_path(@recipe) %>
 <%= link_to "Receitas" , recipes_path %>
+<%= link_to "Excluir Receita" , recipe_path(@recipe), method: :delete, data: {confirm: "Deseja deletar esta receita?"} %>
