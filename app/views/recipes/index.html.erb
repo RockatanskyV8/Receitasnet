@@ -1,5 +1,4 @@
 <h1><%= pluralize(@recipes.size, "Receita", "Receitas")%></h1>
-<ul>
   <% @recipes.each do |recipe| %>
   <article>
       <h2><%= link_to recipe.name , recipe %></h2>
@@ -13,6 +12,6 @@
           <td><%= number_to_currency(recipe.cost) %></td>
         </tr>
       </table>
-    <% end %>
   </article>
-</ul>
+<% end %>
+<br /><%= link_to 'Nova Receita' , new_recipe_path %>

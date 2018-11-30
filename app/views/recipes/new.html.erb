@@ -1,0 +1,26 @@
+<%= form_for(@recipe) do |f| %>
+
+<p>
+  <%= f.label :Nome %><br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :Ingredientes %><br />
+  <%= f.text_field :stuff , cols: 20, rows: 5 %>
+</p>
+<p>
+  <%= f.label :Calorias %><br />
+  <%= f.number_field :calories %>
+</p>
+<p>
+  <%= f.label :Modo_de_Preparo %><br />
+  <%= f.text_area :prepare_mode , cols: 20, rows: 5  %>
+</p>
+<p>
+  <%= f.label :Custo %><br />
+  <%= f.number_field :cost , cols: 20, rows: 5  %>
+</p>
+
+<%= f.submit %>
+
+<% end %>

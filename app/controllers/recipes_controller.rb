@@ -18,4 +18,15 @@ class RecipesController < ApplicationController
     @recipe.update(recipe_params)
     redirect_to @recipe
   end
+
+  def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    recipe_params = params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
+    @recipe = Recipe.new(recipe_params)
+    @recipe.save
+    redirect_to @recipe
+  end
 end
