@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    recipe_params = params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
     @recipe.update(recipe_params)
     redirect_to @recipe
   end
@@ -24,7 +23,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe_params = params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
     @recipe = Recipe.new(recipe_params)
     @recipe.save
     redirect_to @recipe
@@ -35,4 +33,10 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_url
   end
+
+  private
+
+    def recipe_params
+      params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
+    end
 end
