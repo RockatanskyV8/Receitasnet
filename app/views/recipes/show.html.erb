@@ -1,3 +1,5 @@
+<div class="container">
+<div class="jumbotron">
 <article>
   <header>
     <h1><%= @recipe.name %></h1>
@@ -15,10 +17,17 @@
   <p><%= @recipe.duration.to_formatted_s(:time) %> min</p>
   <h3>Porções</h3>
   <p><%= pluralize(@recipe.portion, 'porção', 'porções') %></p>
-
-
 </article>
+</div>
+<%= link_to recipes_path  , class:'btn btn-link' do %>
+<i class="glyphicon glyphicon-home"> Home</i>
+<% end %>
 
-<%= link_to "Editar Receita" , edit_recipe_path(@recipe) %>
-<%= link_to "Receitas" , recipes_path %>
-<%= link_to "Excluir Receita" , recipe_path(@recipe), method: :delete, data: {confirm: "Deseja deletar esta receita?"} %>
+<%= link_to edit_recipe_path(@recipe) , class:'btn btn-link' do %>
+<i class="glyphicon glyphicon-edit"> Editar</i>
+<% end %>
+
+<%= link_to recipe_path(@recipe), method: :delete, data: {confirm: "Deseja deletar esta receita?"} do %>
+<i class="glyphicon glyphicon-remove-sign"> Excluir</i>
+<% end %>
+</div>
