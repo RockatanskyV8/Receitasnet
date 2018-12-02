@@ -17,8 +17,20 @@
   <%= f.text_area :prepare_mode , cols: 20, rows: 5  %>
 </p>
 <p>
+  <%= f.label :Tempo_de_preparo %><br />
+  <%= f.time_select :duration %>
+</p>
+<p>
+  <%= f.label :Porções %><br />
+  <%= f.text_field :portion %>
+</p>
+<p>
   <%= f.label :Custo %><br />
   <%= f.number_field :cost , cols: 20, rows: 5  %>
+</p>
+<p>
+  <%= f.label :Poster %><br />
+  <%= f.text_field :poster, placeholder:".GIF .JPEG ou .PNG" %>
 </p>
 
 <%= f.submit %>

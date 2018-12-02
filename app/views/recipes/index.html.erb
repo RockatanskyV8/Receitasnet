@@ -2,15 +2,16 @@
   <% @recipes.each do |recipe| %>
   <article>
       <h2><%= link_to recipe.name , recipe %></h2>
+      <%= imagem(recipe) %>
       <p><%= formata_caloria(recipe) %></p>
       <table>
         <tr>
           <th>Modo de Preparo:</th>
           <td><%= truncate(recipe.stuff, length:15, separador:' ') %></td>
+          <td><%= recipe.duration.to_formatted_s(:time) %> min</td>
           </tr>
           <th>Custo do Prato</th>
           <td><%= number_to_currency(recipe.cost) %></td>
-        </tr>
       </table>
   </article>
 <% end %>
