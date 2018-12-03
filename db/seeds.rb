@@ -40,3 +40,11 @@ Recipe.create!([
     poster: ""
   }
 ])
+
+receita = Recipe.find_by(name: 'Estrogonofe de Carne')
+receita.comments.create(name:'Paulo Xavier' , rating:9 , comment:'Ótima!')
+receita.comments.create(name:'Larissa Santana' , rating:9 , comment:'Muito boa, recomendo')
+receita.comments.create(name:'Carlos Fernando' , rating:6 , comment:'Não gostei muito não')
+
+receita = Recipe.find_by(name: 'Miojo')
+receita.comments.create(name:'Paulo Xavier' , rating:7 , comment:'Bem prático')
