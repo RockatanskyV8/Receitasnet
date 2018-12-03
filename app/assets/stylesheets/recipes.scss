@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font_size:12px;
+
 .nova_receita{
   float: right;
+}
+
+.small_font_rating{
+  font-size: $font_size;
+  font-weight: bold;
+}
+
+.small_font{
+  font-size: $font_size;
 }
