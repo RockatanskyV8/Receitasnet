@@ -1,0 +1,19 @@
+<%= form_for([@recipe, @comment]) do |f| %>
+<%= render 'layouts/errors', object: @comment %>
+  <p class='form-group'>
+    <%= f.label :Nome %>
+    <%= f.text_field :name, autofocus: true, class:'form-control' %>
+  </p>
+  <p class='form-group'>
+    <%= f.label :Pontos %>
+    <%= f.select :rating, Comment::RATING, prompt:'Quantos pontos:', class:'form-control' %>
+  </p>
+  <p class='form-group'>
+    <%= f.label :Comentário %>
+    <%= f.text_area :comment, placeholder:"Escreva o seu comentario aqui", class:'form-control' %>
+  </p>
+  <p class='form-group'>
+    <%= f.submit class:'btn btn-primary' %>
+    <%= link_to 'Cancelar', recipes_url, class:'btn btn-default' %>
+  </p>
+<% end %>

@@ -2,6 +2,7 @@ pt-BR:
   activerecord:
     models:
       recipe: Receita
+      comment: Comentário
     attributes:
       recipe:
         name: Nome
@@ -13,6 +14,10 @@ pt-BR:
         portion: Porção
         duration: Tempo de Preparo
         poster: Poster
+      comment:
+        name: Nome
+        rating: Pontos
+        comment: Comentário
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

@@ -1,4 +1,5 @@
 <%= form_for(@recipe) do |f| %>
+<%= render 'layouts/errors', object: @recipe %>
 <%= render 'layouts/errors' %>
 
 <p class="form-group">
